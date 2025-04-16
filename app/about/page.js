@@ -1,7 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
+import Image from "next/image"
 
-const About = () => {
+export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 via-purple-200 to-purple-300 px-6 py-12 flex flex-col items-center">
       <div className="w-full max-w-4xl bg-white shadow-2xl rounded-2xl p-8 md:p-12 text-center">
@@ -10,16 +9,20 @@ const About = () => {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-700 mb-6">
-          Say goodbye to long, messy URLs! <strong className="text-purple-800">BitLinks</strong> is your sleek and smart URL shortener.
+          Say goodbye to long, messy URLs! <strong className="text-purple-800">BitLinks</strong> is your sleek and smart
+          URL shortener.
         </p>
 
-        <div className="relative w-full h-64 mb-8">
+        {/* Fixed image container */}
+        <div className="relative w-full h-64 mb-8 flex items-center justify-center">
           <Image
             src="/url.shortner.png"
             alt="URL Shortener Illustration"
-            layout="fill"
-            objectFit="contain"
+            fill
+            sizes="(max-width: 768px) 100vw, 700px"
+            style={{ objectFit: "contain" }}
             className="rounded-xl"
+            priority
           />
         </div>
 
@@ -33,16 +36,20 @@ const About = () => {
 
         <h2 className="text-3xl font-bold text-purple-800 mb-4">🌟 Built for You</h2>
         <p className="text-lg md:text-xl text-gray-700 mb-8">
-          Whether you're a student, creator, marketer, or just someone who loves neat links — <strong>BitLinks</strong> helps you share better. Compact links, maximum impact.
+          Whether you{"'"}re a student, creator, marketer, or just someone who loves neat links —{" "}
+          <strong>BitLinks</strong> helps you share better. Compact links, maximum impact.
         </p>
 
-        <div className="relative w-full h-64 mb-8">
+        {/* Fixed image container */}
+        <div className="relative w-full h-64 mb-8 flex items-center justify-center">
           <Image
             src="/link-sharing.png"
             alt="Link Sharing"
-            layout="fill"
-            objectFit="contain"
+            fill
+            sizes="(max-width: 768px) 100vw, 700px"
+            style={{ objectFit: "contain" }}
             className="rounded-xl"
+            priority
           />
         </div>
 
@@ -51,7 +58,5 @@ const About = () => {
         </p>
       </div>
     </div>
-  );
-};
-
-export default About;
+  )
+}

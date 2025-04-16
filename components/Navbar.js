@@ -1,5 +1,6 @@
 'use client';
 
+import Image from "next/image"
 import React, { useState } from 'react';
 import Link from 'next/link';
 
@@ -11,7 +12,7 @@ const Navbar = () => {
       <div className='max-w-7xl mx-auto flex items-center justify-between'>
     
       <Link href="/" className="text-2xl font-bold flex items-center gap-2">
-  <img src="/link.png" width={38} height={30} alt="Logo" />
+      <Image src="/link.png" alt="Logo" width={40} height={25} priority />
   <span>BitLinks</span>
 </Link>
 
