@@ -1,4 +1,9 @@
-import clientPromise from "@/lib/mongodb";
+import { connectToDatabase } from "@/lib/mongodb";
+
+// Set maximum duration for this function
+export const config = {
+  maxDuration: 60
+};
 
 export async function POST(request) {
   try {
@@ -22,29 +27,54 @@ export async function POST(request) {
       );
     }
 
-    // Connect to MongoDB with timeout
-    let client;
+    // Connect to MongoDB with improved error handling
+    let client, db;
     try {
-      // Set a timeout for the MongoDB connection
+      console.log("Connecting to MongoDB...");
+      const startTime = Date.now();
+      
+      // Set a longer timeout for the MongoDB connection
       const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error("Connection timeout")), 5000)
+        setTimeout(() => reject(new Error("Connection timeout")), 15000)
       );
-      client = await Promise.race([clientPromise, timeoutPromise]);
+      
+      const connection = await Promise.race([
+        connectToDatabase(),
+        timeoutPromise
+      ]);
+      
+      client = connection.client;
+      db = connection.db;
+      
+      console.log(`MongoDB connected in ${Date.now() - startTime}ms`);
     } catch (error) {
       console.error("MongoDB connection error:", error);
       return Response.json(
-        { success: false, error: true, message: "Database connection failed" },
+        { 
+          success: false, 
+          error: true, 
+          message: "Database connection failed",
+          details: process.env.NODE_ENV === "development" ? error.message : undefined
+        },
         { status: 500 }
       );
     }
 
-    // Database operations with error handling
+    // Database operations with error handling and timing
     try {
-      const db = client.db("bitlinks");
+      console.log("Starting database operations...");
+      const startTime = Date.now();
+      
       const collection = db.collection("url");
 
-      // Check if the short url exists
-      const doc = await collection.findOne({ shorturl: body.shorturl });
+      // Use projection to minimize data transfer
+      const doc = await collection.findOne(
+        { shorturl: body.shorturl },
+        { projection: { _id: 1 } }
+      );
+      
+      console.log(`Find operation completed in ${Date.now() - startTime}ms`);
+      
       if (doc) {
         return Response.json({
           success: false,
@@ -54,11 +84,14 @@ export async function POST(request) {
       }
 
       // Insert the new URL
-      const result = await collection.insertOne({
+      const insertStartTime = Date.now();
+      await collection.insertOne({
         url: body.url,
         shorturl: body.shorturl,
         createdAt: new Date(),
       });
+      
+      console.log(`Insert operation completed in ${Date.now() - insertStartTime}ms`);
 
       return Response.json({
         success: true,
