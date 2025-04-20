@@ -1,36 +1,102 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🔗 BitLinks – A Modern URL Shortener
 
-## Getting Started
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Visit%20Now-brightgreen?style=for-the-badge)](https://bit-links-app.vercel.app)
+[![Built With](https://img.shields.io/badge/Built%20With-Next.js%2C%20React%2C%20TailwindCSS-blueviolet?style=for-the-badge)]()
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## ✨ Overview
+
+**BitLinks** is a clean, fast, and responsive **URL shortener app** inspired by Bitly. Easily convert long URLs into short, shareable links with one click. Designed for simplicity and speed, this app delivers a smooth user experience and minimal UI.
+
+> 🔥 [Try the Live App](https://bit-links-app.vercel.app)
+
+---
+
+## 🚀 Features
+
+- 🔗 **Instant URL Shortening**
+- 🧠 **Smart Copy Button**
+- 📱 **Responsive & Mobile Friendly**
+- 💡 **Minimal UI with TailwindCSS**
+- ⚡ **Next.js for Fast Rendering**
+- 🌐 **Deployed on Vercel**
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React.js, Next.js
+- **Styling:** Tailwind CSS
+- **Deployment:** Vercel
+
+---
+
+## 📸 Screenshots
+
+| |  Homepage |
+| ![Home](/public/Home.png) |
+| After URL Shortening |
+| ![Shortened](/public/Shorten.png) | 
+| Aboutpage |
+| ![About](/public/about.png)
+
+---
+
+## 📂 Project Structure
+
+```
+/pages          # Next.js pages & routes
+/components     # Reusable UI components
+/styles         # Global styles (Tailwind)
+/public         # Static files & assets
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🧑‍💻 How to Run Locally
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+# Clone the repository
+git clone https://github.com/your-username/bitlinks.git
 
-## Learn More
+# Navigate into the project directory
+cd bitlinks
 
-To learn more about Next.js, take a look at the following resources:
+# Install dependencies
+npm install
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Start the development server
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 💡 Future Improvements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- 🔐 User Authentication
+- 📊 Click Analytics Dashboard
+- 🧾 Custom Aliases
+- 🧠 Save link history
+- 🌓 Dark Mode Toggle
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👩‍💻 About the Developer
+
+**Subhasmita Sahoo**  
+Frontend Developer | UI/UX Enthusiast | Tech Explorer
+
+📍 Khordha, Odisha  
+📫 [Email me](mailto:subhasmita4602@gmail.com)  
+🌐 [Portfolio](#) | 💼 [LinkedIn](https://www.linkedin.com/in/subhasmita-sahoo-puja/) | 💻 [GitHub](https://github.com/subhasmita-puja)
+
+---
+
+## 📝 License
+
+Licensed under the [MIT License](LICENSE).
+
+---
+
+> ⭐ Don't forget to star the repo if you like it!
