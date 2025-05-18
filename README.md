@@ -88,7 +88,7 @@ npm run dev
 Frontend Developer | UI/UX Enthusiast | Tech Explorer
 
 📍 Khordha, Odisha  
-📫 [Email me](mailto:subhasmita4602@gmail.com)  
+📫 [Email me] (mailto: subhasmita4602@gmail.com)  
 🌐 [Portfolio](#) | 💼 [LinkedIn](https://www.linkedin.com/in/subhasmita-sahoo-puja/) | 💻 [GitHub](https://github.com/subhasmita-puja)
 
 ---
