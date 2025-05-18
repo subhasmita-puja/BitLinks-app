@@ -58,7 +58,7 @@
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/bitlinks.git
+git clone https://github.com/subhasmita-puja/BitLinks-app.git
 
 # Navigate into the project directory
 cd bitlinks
