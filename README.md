@@ -27,6 +27,7 @@
 ## 🛠️ Tech Stack
 
 - **Frontend:** React.js, Next.js
+- **Backend:** MongoDB, Express.js
 - **Styling:** Tailwind CSS
 - **Deployment:** Vercel
 
